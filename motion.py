@@ -10,6 +10,7 @@ def noise():
 
         diff = cv2.absdiff(frame2, frame1)
         diff = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
+        diff = cv2.blur(diff, (5, 5))
 
         _, thresh = cv2.threshold(diff, 25, 255, cv2.THRESH_BINARY)
 
